@@ -12,6 +12,11 @@ async function bootstrap() {
       whitelist:true
   }))
   app.useStaticAssets(join(__dirname,'../public'))
+
+   app.enableCors({
+    origin: ['https://deploy-nextjs-pos-six.vercel.app'],
+    credentials: true,
+  });
   await app.listen(port);
 }
 bootstrap();
